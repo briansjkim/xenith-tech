@@ -46,6 +46,7 @@ class App extends Component {
           value={this.state.toDo}
           placeholder="Create new item..."
         />
+        <ToDoList />
       </div>
     );
   };
