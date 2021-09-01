@@ -1,5 +1,5 @@
 // import './App.css';
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 class App extends Component {
   constructor() {
