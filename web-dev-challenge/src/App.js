@@ -10,14 +10,16 @@ class App extends Component {
       toDo: '',
       toDoList: []
     };
+
+    this.handleChange = this.handleChange.bind(this);
   };
 
   handleChange(e) {
-    // this.setState( prevState => {
-    //   return {
-    //     toDo: 
-    //   };
-    // });
+    this.setState( prevState => {
+      return {
+        toDo: e.target.value
+      };
+    });
   };
 
   render() {
