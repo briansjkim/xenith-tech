@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <textarea 
+        <input 
           onChange={this.handleChange}
           value={this.state.toDo}
           placeholder="Create new item..."
