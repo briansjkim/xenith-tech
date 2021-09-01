@@ -39,7 +39,7 @@ class App extends Component {
     return (
       <div>
         <h1>TODO</h1>
-        <textarea 
+        <input
           onChange={this.handleChange}
           onKeyPress={this.handleSubmit}
           value={this.state.toDo}
