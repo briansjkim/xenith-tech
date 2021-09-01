@@ -1,10 +1,10 @@
 import React from 'react';
 import './TodoList.css';
 
-export default function TodoList() {
+export default function TodoList({ todos }) {
     return (
         <div className="Todolist">
-            <p>You have no items in your todo list. Create an item to begin tracking your list.</p>
+            {todos.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
         </div>
     )
 };
