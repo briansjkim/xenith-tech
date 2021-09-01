@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoList from '../TodoList/TodoList';
+import TodoList from '../TodoList/TodoList.js';
 
 class App extends Component {
   constructor() {
@@ -49,7 +49,7 @@ class App extends Component {
           />
         </div>
         <div className="App-todolist">
-          <TodoList />
+          <TodoList todos={this.state.toDoList} />
         </div>
       </div>
     );
