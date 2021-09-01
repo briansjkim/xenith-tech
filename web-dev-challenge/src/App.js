@@ -16,10 +16,8 @@ class App extends Component {
   };
 
   handleChange(e) {
-    this.setState( prevState => {
-      return {
-        toDo: e.target.value
-      };
+    this.setState({
+      toDo: e.target.value
     });
   };
 
