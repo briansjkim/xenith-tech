@@ -12,6 +12,14 @@ class App extends Component {
     };
   };
 
+  handleChange(e) {
+    // this.setState( prevState => {
+    //   return {
+    //     toDo: 
+    //   };
+    // });
+  };
+
   render() {
     return (
       <div>
