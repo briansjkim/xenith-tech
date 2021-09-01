@@ -39,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="app-input">
+        <div className="App-input">
           <h1>TODO</h1>
           <input
             onChange={this.handleChange}
@@ -48,7 +48,7 @@ class App extends Component {
             placeholder="Create new item..."
           />
         </div>
-        <div>
+        <div className="App-todolist">
           <ToDoList />
         </div>
       </div>
