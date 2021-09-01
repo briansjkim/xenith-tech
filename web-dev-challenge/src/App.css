@@ -1,5 +1,5 @@
 /* ALL initial styling. will change  */
-.app-input {
+.App-input {
   position: absolute;
   width: 1440px;
   height: 352px;
@@ -31,6 +31,16 @@ input {
   height: 72px;
   left: 320px;
   top: 152px;
+  background: #25273C;
+  border-radius: 7px;
+}
+
+.App-todolist {
+  position: absolute;
+  width: 800px;
+  height: 148px;
+  left: 320px;
+  top: 296px;
   background: #25273C;
   border-radius: 7px;
 }
