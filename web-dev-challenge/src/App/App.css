@@ -5,7 +5,7 @@
   height: 352px;
   left: 0px;
   top: 0px;
-  background: linear-gradient(131.73deg, rgba(114, 190, 248, 0.8) 14.46%, rgba(166, 116, 242, 0.8) 87.62%);
+  background: linear-gradient(131.73deg, rgba(114, 190, 248, 0.8) 14.46%, rgba(166, 116, 242, 0.8) 87.62%), url(../images/bg__trees.png) right no-repeat;
 }
 
 h1 {
