@@ -39,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="App-input">
+        <div className="app-input">
           <h1>TODO</h1>
           <input
             onChange={this.handleChange}
