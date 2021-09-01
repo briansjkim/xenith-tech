@@ -1,5 +1,6 @@
 // import './App.css';
 import React, { Component } from 'react';
+import ToDoList from './ToDoList';
 
 class App extends Component {
   constructor() {
@@ -45,6 +46,7 @@ class App extends Component {
           value={this.state.toDo}
           placeholder="Create new item..."
         />
+        <ToDoList />
       </div>
     );
   };
