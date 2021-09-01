@@ -1,3 +1,4 @@
+/* ALL initial styling. will change  */
 .app-input {
   position: absolute;
   width: 1440px;
@@ -22,4 +23,14 @@ h1 {
   
   letter-spacing: 0.25em;
   color: #FFFFFF;
+}
+
+input {
+  position: absolute;
+  width: 800px;
+  height: 72px;
+  left: 320px;
+  top: 152px;
+  background: #25273C;
+  border-radius: 7px;
 }
