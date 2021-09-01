@@ -24,7 +24,17 @@ class App extends Component {
   };
 
   handleSubmit(e) {
-    
+    if (e.key === 'Enter') {
+      e.preventDefault();
+
+      let { toDo, toDoList } = this.state;
+      toDoList.push(toDo);
+      
+      this.setState({
+        toDoList: toDoList,
+        toDo: ''
+      });
+    };
   };
 
   render() {
@@ -32,6 +42,7 @@ class App extends Component {
       <div>
         <textarea 
           onChange={this.handleChange}
+          onKeyPress={this.handleSubmit}
           value={this.state.toDo}
           placeholder="Create new item..."
         />
