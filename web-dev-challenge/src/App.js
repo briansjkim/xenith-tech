@@ -23,7 +23,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hi There</h1>
+        <textarea 
+          onChange={this.handleChange}
+          value={this.state.toDo}
+          placeholder="Create new item..."
+        />
       </div>
     );
   };
