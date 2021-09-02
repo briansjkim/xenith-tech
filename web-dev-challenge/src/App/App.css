@@ -51,7 +51,7 @@ input {
   border-radius: 7px;
 }
 
-.App-todolist {
+.empty-list {
   position: absolute;
   padding: 0;
   width: 800px;
@@ -62,9 +62,10 @@ input {
   background: #25273C;
   border-radius: 7px;
   text-align: center;
+
 }
 
-.App-todolist p {
+.empty-list p {
   position: absolute;
   width: 492px;
   height: 48px;
