@@ -1,3 +1,17 @@
+.Todolist {
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    width: 800px;
+    /* height: 148px; */
+    /* left: 320px; */
+    left: 560px;
+    top: 296px;
+    background: #25273C;
+    border-radius: 7px;
+    text-align: center;
+  }
+
 .todos {
     padding: 0;
     margin: 0;
@@ -24,10 +38,12 @@
 
 }
 
-/* .todo-circle {
+.todo-circle {
     border-radius:50%;
     width: 28px;
     height: 28px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
-} */
+    margin-right: 16px;
+}
+
