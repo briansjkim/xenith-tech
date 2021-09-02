@@ -53,6 +53,7 @@ input {
 
 .App-todolist {
   position: absolute;
+  padding: 0;
   width: 800px;
   height: 148px;
   /* left: 320px; */
