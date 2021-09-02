@@ -18,7 +18,10 @@ export default function TodoList({ todos }) {
         <Fragment>
             <ul className="todos">
                 {todos.map( todo =>
-                    <li key={generateKey(todo)}>{todo}</li>    
+                    <li key={generateKey(todo)}>
+                        <span className="todo-circle"></span>
+                        {todo}
+                    </li>    
                 )}
             </ul>
             {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
