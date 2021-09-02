@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './TodoList.css';
-// import Todo from './Todo';
 
 export default function TodoList({ todos }) {
     const generateKey = (item) => {
@@ -22,6 +21,7 @@ export default function TodoList({ todos }) {
                     <li key={generateKey(todo)}>{todo}</li>    
                 )}
             </ul>
+            {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
         </Fragment>
     )
 }
