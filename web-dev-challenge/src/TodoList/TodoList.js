@@ -8,14 +8,20 @@ export default function TodoList({ todos }) {
     };
 
     return (
-        <div className="Todolist">
+        // <div className="Todolist">
+        //     {todos.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
+        //     <ul className="todos">
+        //         {todos.map( todo =>
+        //             <li key={generateKey(todo)}>{todo}</li>
+        //         )}
+        //     </ul>
+        // </div>
+        <ul className="Todolist">
             {todos.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
-            <ul className="todos">
-                {todos.map( todo =>
-                    <li key={generateKey(todo)}>{todo}</li>
-                )}
-            </ul>
-        </div>
+            {todos.map( todo =>
+                <li key={generateKey(todo)}>{todo}</li>
+            )}
+        </ul>
     )
 }
 
