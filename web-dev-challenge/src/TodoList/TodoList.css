@@ -12,3 +12,7 @@
     text-align:center;
     color: #FFFFFF;
 }
+
+.todos li {
+    list-style-type: none;
+}
