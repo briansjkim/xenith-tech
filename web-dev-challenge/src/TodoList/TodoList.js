@@ -9,13 +9,20 @@ export default function TodoList({ todos }) {
     };
 
     return (
-        <div className="Todolist">
+        // <div className="Todolist">
+        //     <ul className="todos">
+        //         {todos.map( todo =>
+        //             <li key={generateKey(todo)}>{todo}</li>
+        //         )}
+        //     </ul>
+        // </div>
+        <Fragment>
             <ul className="todos">
                 {todos.map( todo =>
-                    <li key={generateKey(todo)}>{todo}</li>
+                    <li key={generateKey(todo)}>{todo}</li>    
                 )}
             </ul>
-        </div>
+        </Fragment>
     )
 }
 
