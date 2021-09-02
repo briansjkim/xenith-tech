@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <div className="App-input">
           <h1>TODO</h1>
           <input

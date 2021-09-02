@@ -1,12 +1,25 @@
 /* ALL initial styling. will change  */
+/* .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .App-input {
   position: absolute;
-  width: 1440px;
+  /* width: 1440px; */
   height: 352px;
   left: 0px;
   top: 0px;
   background: linear-gradient(131.73deg, rgba(114, 190, 248, 0.8) 14.46%, rgba(166, 116, 242, 0.8) 87.62%), url(../images/bg__trees.png) right no-repeat;
+  width: 100%;
 }
+
+/* @media screen and (max-width: 1024px) {
+  .App-input {
+    background: blue;
+  }
+} */
 
 h1 {
   position: absolute;
