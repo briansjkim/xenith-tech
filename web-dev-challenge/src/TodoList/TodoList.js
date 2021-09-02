@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TodoList.css';
+// import Todo from './Todo';
 
 export default function TodoList({ todos }) {
     const generateKey = (item) => {
@@ -8,20 +9,13 @@ export default function TodoList({ todos }) {
     };
 
     return (
-        // <div className="Todolist">
-        //     {todos.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
-        //     <ul className="todos">
-        //         {todos.map( todo =>
-        //             <li key={generateKey(todo)}>{todo}</li>
-        //         )}
-        //     </ul>
-        // </div>
-        <ul className="Todolist">
-            {todos.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
-            {todos.map( todo =>
-                <li key={generateKey(todo)}>{todo}</li>
-            )}
-        </ul>
+        <div className="Todolist">
+            <ul className="todos">
+                {todos.map( todo =>
+                    <li key={generateKey(todo)}>{todo}</li>
+                )}
+            </ul>
+        </div>
     )
 }
 
