@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './TodoList.css';
 
@@ -15,7 +15,7 @@ export default function TodoList({ todos }) {
         //         )}
         //     </ul>
         // </div>
-        <Fragment>
+        <div className="Todolist">
             <ul className="todos">
                 {todos.map( todo =>
                     <li key={generateKey(todo)}>
@@ -25,7 +25,7 @@ export default function TodoList({ todos }) {
                 )}
             </ul>
             {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
-        </Fragment>
+        </div>
     )
 }
 
