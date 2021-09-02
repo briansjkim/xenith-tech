@@ -7,6 +7,7 @@
 
 .App-input {
   position: absolute;
+  margin: auto 0;
   /* width: 1440px; */
   height: 352px;
   left: 0px;
@@ -25,7 +26,8 @@ h1 {
   position: absolute;
   width: 143px;
   height: 44px;
-  left: 320px;
+  /* left: 320px; */
+  left: 560px;
   top: 88px;
   
   font-family: Verdana;
@@ -42,7 +44,8 @@ input {
   position: absolute;
   width: 800px;
   height: 72px;
-  left: 320px;
+  /* left: 320px; */
+  left: 560px;
   top: 152px;
   background: #25273C;
   border-radius: 7px;
@@ -52,7 +55,8 @@ input {
   position: absolute;
   width: 800px;
   height: 148px;
-  left: 320px;
+  /* left: 320px; */
+  left: 560px;
   top: 296px;
   background: #25273C;
   border-radius: 7px;
