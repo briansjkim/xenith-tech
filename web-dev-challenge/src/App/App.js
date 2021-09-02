@@ -27,6 +27,14 @@ class App extends Component {
       e.preventDefault();
 
       let { toDo, toDoList } = this.state;
+      if (toDoList.includes(toDo)) {
+        alert('This is already in your list');
+        this.setState({
+          toDo: ''
+        });
+        return;
+      }
+
       toDoList.push(toDo);
       
       this.setState({
