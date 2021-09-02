@@ -19,6 +19,7 @@ export default function TodoList({ todos }) {
             <ul className="todos">
                 {todos.map( todo =>
                     <li key={generateKey(todo)}>
+                        {/* onHover => check mark, onClick => colored check icon and todo item crossed out */}
                         <span className="todo-circle"></span>
                         {todo}
                     </li>    
