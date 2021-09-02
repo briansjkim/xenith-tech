@@ -14,13 +14,13 @@ class App extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  };
+  }
 
   handleChange(e) {
     this.setState({
       toDo: e.target.value
     });
-  };
+  }
 
   handleSubmit(e) {
     if (e.key === 'Enter') {
@@ -33,8 +33,8 @@ class App extends Component {
         toDoList: toDoList,
         toDo: ''
       });
-    };
-  };
+    }
+  }
 
   render() {
     return (
@@ -53,7 +53,7 @@ class App extends Component {
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;

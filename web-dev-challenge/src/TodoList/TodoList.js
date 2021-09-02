@@ -9,3 +9,7 @@ export default function TodoList({ todos }) {
         </div>
     )
 }
+
+TodoList.propTypes = {
+    todos: PropTypes.array
+};
