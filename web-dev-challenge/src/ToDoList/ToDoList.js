@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './TodoList.css';
 
 export default function TodoList({ todos }) {
@@ -7,4 +8,4 @@ export default function TodoList({ todos }) {
             {todos.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
         </div>
     )
-};
+}
