@@ -8,6 +8,7 @@
 .todos li {
     display: flex;
     padding: 24px;
+    left: 20px;
     /* flex-direction: row;
     align-items: center; */
 
@@ -22,3 +23,11 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
 }
+
+/* .todo-circle {
+    border-radius:50%;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+} */
