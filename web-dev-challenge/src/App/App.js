@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import TodoList from '../TodoList/TodoList.js';
 
@@ -56,10 +56,18 @@ class App extends Component {
             placeholder="Create new item..."
           />
         </div>
-        <div className="App-todolist">
+        {/* <div className="App-todolist">
           {this.state.toDoList.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
           <TodoList todos={this.state.toDoList} />
-        </div>
+        </div> */}
+        <Fragment>
+        {this.state.toDoList.length === 0 ? 
+          <div className="empty-list">
+            <p>You have no items in your todo list. Create an item to begin tracking your list.</p>
+          </div> :
+          <TodoList todos={this.state.toDoList} />
+        }
+        </Fragment>
       </div>
     );
   }
