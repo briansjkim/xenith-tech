@@ -9,11 +9,13 @@ class App extends Component {
     this.state = {
       // toDo will be an empty string first to take in the user input
       toDo: '',
-      toDoList: []
+      toDoList: [],
+      defaultBackground: true
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(e) {
@@ -44,6 +46,14 @@ class App extends Component {
     }
   }
 
+  handleClick() {
+    this.setState(prevState => {
+      return {
+        defaultBackground: !prevState.defaultBackground
+      };
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -65,7 +75,11 @@ class App extends Component {
           <div className="empty-list">
             <p>You have no items in your todo list. Create an item to begin tracking your list.</p>
           </div> :
-          <TodoList todos={this.state.toDoList} />
+          <TodoList 
+            todos={this.state.toDoList} 
+            handleClick={this.handleClick}
+            defaultBackground={this.state.defaultBackground}
+          />
         }
         </Fragment>
       </div>
