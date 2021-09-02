@@ -1,14 +1,33 @@
-.Todolist {
-    position: absolute;
-    width: 492px;
-    height: 48px;
-    left: 154px;
-    top: 50px;
+.todos {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    /* border: 1px solid red; */
+}
+
+.todos li {
+    display: flex;
+    padding: 24px;
+    left: 20px;
+    /* flex-direction: row;
+    align-items: center; */
+
+
     font-family: Verdana;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 24px;
-    text-align:center;
     color: #FFFFFF;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
 }
+
+/* .todo-circle {
+    border-radius:50%;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+} */

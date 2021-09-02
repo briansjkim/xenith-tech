@@ -27,6 +27,14 @@ class App extends Component {
       e.preventDefault();
 
       let { toDo, toDoList } = this.state;
+      if (toDoList.includes(toDo)) {
+        alert('This is already in your list');
+        this.setState({
+          toDo: ''
+        });
+        return;
+      }
+
       toDoList.push(toDo);
       
       this.setState({
@@ -49,6 +57,7 @@ class App extends Component {
           />
         </div>
         <div className="App-todolist">
+          {this.state.toDoList.length === 0 && <p>You have no items in your todo list. Create an item to begin tracking your list.</p>}
           <TodoList todos={this.state.toDoList} />
         </div>
       </div>
