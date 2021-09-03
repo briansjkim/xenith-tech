@@ -7,7 +7,8 @@ class ListItem extends Component {
         super(props);
 
         this.state = {
-            defaultBackground: true
+            defaultBackground: true,
+            hovered: false
         };
 
         this.completeTodo = this.completeTodo.bind(this);
@@ -21,6 +22,14 @@ class ListItem extends Component {
           });
     }
 
+    hoverRemove() {
+        this.setState(prevState => {
+            return {
+                hovered: !prevState.hovered
+            };
+        });
+    }
+
     render() {
         return (
             <div className='List-item'>
@@ -32,8 +41,11 @@ class ListItem extends Component {
                     {this.props.todo}
                 </li>
                 <button 
-                    className="remove-todo" 
-                    onClick={() => this.props.removeTodo(this.props.todo)}>
+                    className={this.state.hovered ? 'hover-remove' : 'remove-todo' }
+                    onMouseEnter={() => this.hoverRemove()} 
+                    onMouseLeave={() => this.hoverRemove()}
+                    onClick={() => this.props.removeTodo(this.props.todo)}
+                >X
                 </button>
             </div>
         );

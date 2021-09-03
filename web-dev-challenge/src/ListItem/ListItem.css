@@ -46,10 +46,21 @@ button {
 
 .remove-todo {
     margin-left: auto;
-    background: url(../images//icon__close.png);
+    /* background: url(../images/icon__close.png); */
     cursor: pointer;
     padding: 0;
     border: none;
+    background: none;
+    color: gray;
 }
 
+.hover-remove {
+    margin-left: auto;
+    /* background: url(../images/icon__close.png) ; */
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: none;
+    color: white;
+};
 
