@@ -17,8 +17,9 @@ class App extends Component {
   }
 
   handleChange(e) {
+    let newTodo = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1).toLowerCase();
     this.setState({
-      todo: e.target.value
+      todo: newTodo
     });
   }
 
