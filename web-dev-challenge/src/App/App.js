@@ -25,7 +25,7 @@ class App extends Component {
   handleSubmit(e) {
     if (e.key === 'Enter') {
       e.preventDefault();
-
+      
       let { todo, todoList } = this.state;
       if (todoList.includes(todo)) {
         alert('This is already in your list');
@@ -35,11 +35,11 @@ class App extends Component {
         return;
       }
 
-      todoList.push(todo);
-      
-      this.setState({
-        todoList: todoList,
-        todo: ''
+      this.setState( prevState => {
+        return {
+          todoList: [...prevState.todoList, todo],
+          todo: ''
+        };
       });
     }
   }
