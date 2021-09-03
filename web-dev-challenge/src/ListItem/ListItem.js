@@ -11,15 +11,15 @@ class ListItem extends Component {
             defaultBackground: true
         };
 
-        this.handleClick = this.handleClick.bind(this);
+        this.completeTodo = this.completeTodo.bind(this);
     }
 
-    handleClick() {
+    completeTodo() {
         this.setState(prevState => {
-          return {
-            defaultBackground: !prevState.defaultBackground
-          };
-        });
+            return {
+              defaultBackground: !prevState.defaultBackground
+            };
+          });
     }
 
     render() {
@@ -27,7 +27,7 @@ class ListItem extends Component {
             <div className='List-item'>
                 <button
                     className={this.state.defaultBackground ? undefined : 'button-check'} 
-                    onClick={this.handleClick}
+                    onClick={this.completeTodo}
                 ></button>
                 <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>{this.props.todo}</li>
                 {/* <div className="remove-todo">
