@@ -30,6 +30,9 @@ class ListItem extends Component {
                     onClick={this.handleClick}
                 ></button>
                 <li className={!this.state.defaultBackground && 'todo-complete'}>{this.props.todo}</li>
+                <div className="remove-todo">
+                    <button>X</button>
+                </div>
             </div>
         );
     }
