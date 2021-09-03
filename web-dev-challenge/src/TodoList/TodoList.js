@@ -4,7 +4,9 @@ import './TodoList.css';
 import ListItem from '../ListItem/ListItem';
 // import Button from '../Button/Button';
 
-export default function TodoList({ todos }) {
+// possibly used Context API since TodoList doesn't really need removeTodo?
+    // not deeply nested, so maybe not
+export default function TodoList({ todos, removeTodo }) {
     const generateKey = (item) => {
         return `${item}_${new Date().getTime() }`;
     };
@@ -13,7 +15,11 @@ export default function TodoList({ todos }) {
         <div className="Todolist">
             <ul className="todos">
                 {todos.map( todo =>
-                    <ListItem key={generateKey(todo)} todo={todo} />
+                    <ListItem 
+                        key={generateKey(todo)} 
+                        todo={todo} 
+                        removeTodo={removeTodo}
+                    />
                 )}
             </ul>
             {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
@@ -23,6 +29,5 @@ export default function TodoList({ todos }) {
 
 TodoList.propTypes = {
     todos: PropTypes.array,
-    handleClick: PropTypes.func,
-    defaultBackground: PropTypes.bool
+    removeTodo: PropTypes.func
 };

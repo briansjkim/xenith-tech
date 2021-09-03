@@ -11,32 +11,42 @@ class ListItem extends Component {
             defaultBackground: true
         };
 
-        this.handleClick = this.handleClick.bind(this);
+        this.completeTodo = this.completeTodo.bind(this);
     }
 
-    handleClick() {
+    completeTodo() {
         this.setState(prevState => {
-          return {
-            defaultBackground: !prevState.defaultBackground
-          };
-        });
+            return {
+              defaultBackground: !prevState.defaultBackground
+            };
+          });
     }
 
     render() {
         return (
             <div className='List-item'>
                 <button
-                    className={!this.state.defaultBackground && 'button-check'}
-                    onClick={this.handleClick}
+                    className={this.state.defaultBackground ? undefined : 'button-check'} 
+                    onClick={this.completeTodo}
                 ></button>
-                <li className={!this.state.defaultBackground && 'todo-complete'}>{this.props.todo}</li>
+                <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>
+                    {this.props.todo}
+                </li>
+                {/* <div className="remove-todo">
+                    <button>X</button>
+                </div> */}
+                <button 
+                    className="remove-todo" 
+                    onClick={() => this.props.removeTodo(this.props.todo)}>
+                </button>
             </div>
         );
     }
 }
 
 ListItem.propTypes = {
-    todo: PropTypes.string
+    todo: PropTypes.string,
+    removeTodo: PropTypes.func
 };
 
 export default ListItem;
