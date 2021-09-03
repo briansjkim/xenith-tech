@@ -22,6 +22,10 @@ class ListItem extends Component {
           });
     }
 
+    check(todo) {
+        console.log(todo);
+    }
+
     render() {
         return (
             <div className='List-item'>
@@ -29,18 +33,21 @@ class ListItem extends Component {
                     className={this.state.defaultBackground ? undefined : 'button-check'} 
                     onClick={this.completeTodo}
                 ></button>
-                <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>{this.props.todo}</li>
+                <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>
+                    {this.props.todo}
+                </li>
                 {/* <div className="remove-todo">
                     <button>X</button>
                 </div> */}
-                <button className="remove-todo"></button>
+                <button className="remove-todo" onClick={() => this.props.removeTodo(this.props.todo)}></button>
             </div>
         );
     }
 }
 
 ListItem.propTypes = {
-    todo: PropTypes.string
+    todo: PropTypes.string,
+    removeTodo: PropTypes.func
 };
 
 export default ListItem;
