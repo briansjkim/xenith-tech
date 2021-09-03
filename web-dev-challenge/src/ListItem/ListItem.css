@@ -43,3 +43,7 @@ button {
     filter: alpha(opacity = 60);
     text-decoration: line-through;
 }
+
+.remove-todo {
+    margin-left: auto;
+}
