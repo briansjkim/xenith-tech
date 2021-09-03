@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ListItem.css';
 
-// need to add a remove button too
 class ListItem extends Component {
     constructor(props) {
         super(props);
@@ -32,9 +31,6 @@ class ListItem extends Component {
                 <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>
                     {this.props.todo}
                 </li>
-                {/* <div className="remove-todo">
-                    <button>X</button>
-                </div> */}
                 <button 
                     className="remove-todo" 
                     onClick={() => this.props.removeTodo(this.props.todo)}>
