@@ -22,10 +22,6 @@ class ListItem extends Component {
           });
     }
 
-    check(todo) {
-        console.log(todo);
-    }
-
     render() {
         return (
             <div className='List-item'>
@@ -39,7 +35,10 @@ class ListItem extends Component {
                 {/* <div className="remove-todo">
                     <button>X</button>
                 </div> */}
-                <button className="remove-todo" onClick={() => this.props.removeTodo(this.props.todo)}></button>
+                <button 
+                    className="remove-todo" 
+                    onClick={() => this.props.removeTodo(this.props.todo)}>
+                </button>
             </div>
         );
     }
