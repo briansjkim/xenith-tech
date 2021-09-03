@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ListItem.css';
 
-// need to add a remove button too
+// hovered is to make the close icon white
 class ListItem extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            defaultBackground: true
+            defaultBackground: true,
+            hovered: false
         };
 
         this.completeTodo = this.completeTodo.bind(this);
+        this.hoverRemove = this.hoverRemove.bind(this);
     }
 
     completeTodo() {
@@ -19,7 +21,15 @@ class ListItem extends Component {
             return {
               defaultBackground: !prevState.defaultBackground
             };
-          });
+        });
+    }
+
+    hoverRemove() {
+        this.setState(prevState => {
+            return {
+                hovered: !prevState.hovered
+            };
+        });
     }
 
     render() {
@@ -32,12 +42,12 @@ class ListItem extends Component {
                 <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>
                     {this.props.todo}
                 </li>
-                {/* <div className="remove-todo">
-                    <button>X</button>
-                </div> */}
                 <button 
-                    className="remove-todo" 
-                    onClick={() => this.props.removeTodo(this.props.todo)}>
+                    className={this.state.hovered ? 'hover-remove' : 'remove-todo' }
+                    onMouseEnter={() => this.hoverRemove()} 
+                    onMouseLeave={() => this.hoverRemove()}
+                    onClick={() => this.props.removeTodo(this.props.todo)}
+                >
                 </button>
             </div>
         );
