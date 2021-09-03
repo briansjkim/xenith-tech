@@ -16,14 +16,6 @@ export default function TodoList({ todos }) {
                     <ListItem key={generateKey(todo)} todo={todo} />
                 )}
             </ul>
-                {/* {todos.map( todo =>
-                    <button className={defaultBackground ? "todo-ellipse" : "todo-complete"} onClick={handleClick}></button>
-                    <li key={generateKey(todo)}>
-                        onHover => check mark, onClick => colored check icon and todo item crossed out
-                        onClick is being applied on all the elements instead of individually
-                        {todo}
-                    </li>    
-                )} */}
             {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
         </div>
     )
