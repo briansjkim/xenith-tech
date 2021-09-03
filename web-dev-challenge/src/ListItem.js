@@ -25,10 +25,10 @@ class ListItem extends Component {
         return (
             <div className='List-item'>
                 <button
-                    className={!this.state.defaultBackground && 'todo-complete'}
+                    className={!this.state.defaultBackground && 'button-check'}
                     onClick={this.handleClick}
                 ></button>
-                <li>{this.props.todo}</li>
+                <li className={!this.state.defaultBackground && 'todo-complete'}>{this.props.todo}</li>
             </div>
         )
     }
