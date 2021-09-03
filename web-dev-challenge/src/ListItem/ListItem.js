@@ -30,7 +30,7 @@ class ListItem extends Component {
                 ></button>
                 <li className={!this.state.defaultBackground && 'todo-complete'}>{this.props.todo}</li>
             </div>
-        )
+        );
     }
 }
 
