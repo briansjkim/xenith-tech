@@ -7,8 +7,8 @@ import './Button.css';
 
 // maybe use React Hooks later since it only needs one prop in state
 class Button extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             defaultBackground: true
@@ -29,8 +29,9 @@ class Button extends Component {
         return (
             <button 
                 className={this.state.defaultBackground ? "todo-ellipse" : "todo-complete"} 
-                onClick={this.handleClick}
-            ></button>
+                onClick={this.handleClick}>
+                    {this.props.children}
+                </button>
         )
     }
 
@@ -39,6 +40,5 @@ class Button extends Component {
 export default Button;
 
 Button.propTypes = {
-    defaultBackground: PropTypes.bool,
-    handleClick: PropTypes.func
+    children: PropTypes.string
 };
