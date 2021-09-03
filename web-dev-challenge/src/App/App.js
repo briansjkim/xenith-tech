@@ -7,17 +7,18 @@ class App extends Component {
     super();
 
     this.state = {
-      toDo: '',
-      toDoList: [],
+      todo: '',
+      todoList: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
   }
 
   handleChange(e) {
     this.setState({
-      toDo: e.target.value
+      todo: e.target.value
     });
   }
 
@@ -25,22 +26,32 @@ class App extends Component {
     if (e.key === 'Enter') {
       e.preventDefault();
 
-      let { toDo, toDoList } = this.state;
-      if (toDoList.includes(toDo)) {
+      let { todo, todoList } = this.state;
+      if (todoList.includes(todo)) {
         alert('This is already in your list');
         this.setState({
-          toDo: ''
+          todo: ''
         });
         return;
       }
 
-      toDoList.push(toDo);
+      todoList.push(todo);
       
       this.setState({
-        toDoList: toDoList,
-        toDo: ''
+        todoList: todoList,
+        todo: ''
       });
     }
+  }
+
+  removeTodo(todoItem) {
+    this.setState( prevState => {
+      return {
+        todoList: prevState.todoList.filter( (todo) => {
+          return todo !== todoItem
+        })
+      };
+    });
   }
 
   render() {
@@ -51,16 +62,19 @@ class App extends Component {
           <input
             onChange={this.handleChange}
             onKeyPress={this.handleSubmit}
-            value={this.state.toDo}
+            value={this.state.todo}
             placeholder="Create new item..."
           />
         </div>
         <div>
-        {this.state.toDoList.length === 0 ? 
+        {this.state.todoList.length === 0 ? 
           <div className="empty-list">
             <p>You have no items in your todo list. Create an item to begin tracking your list.</p>
           </div> :
-          <TodoList todos={this.state.toDoList} />
+          <TodoList 
+            todos={this.state.todoList} 
+            removeTodo={this.removeTodo}
+          />
         }
         </div>
       </div>
