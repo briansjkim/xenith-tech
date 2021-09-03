@@ -14,4 +14,5 @@
   4. Add to-do items and mark them as complete once finished with them.
 
 # What I've learned from this project
+ > using proptypes
 # Improvements/Enhancements to this project
