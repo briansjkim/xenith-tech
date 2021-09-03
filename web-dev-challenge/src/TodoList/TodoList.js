@@ -4,6 +4,8 @@ import './TodoList.css';
 import ListItem from '../ListItem/ListItem';
 // import Button from '../Button/Button';
 
+// possibly used Context API since TodoList doesn't really need removeTodo?
+    // not deeply nested, so maybe not
 export default function TodoList({ todos, removeTodo }) {
     const generateKey = (item) => {
         return `${item}_${new Date().getTime() }`;
