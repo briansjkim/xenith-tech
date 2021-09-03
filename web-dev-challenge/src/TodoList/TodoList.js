@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TodoList.css';
-import ListItem from '../ListItem';
+import ListItem from '../ListItem/ListItem';
 // import Button from '../Button/Button';
 
 export default function TodoList({ todos }) {
