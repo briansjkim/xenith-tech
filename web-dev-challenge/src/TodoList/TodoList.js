@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TodoList.css';
-import Button from '../Button/Button';
+import ListItem from '../ListItem';
+// import Button from '../Button/Button';
 
 export default function TodoList({ todos }) {
     const generateKey = (item) => {
@@ -12,11 +13,9 @@ export default function TodoList({ todos }) {
         <div className="Todolist">
             <ul className="todos">
                 {todos.map( todo =>
-                    <li key={generateKey(todo)}>
-                        <Button />
-                        {todo}
-                    </li>
+                    <ListItem key={generateKey(todo)} todo={todo} />
                 )}
+            </ul>
                 {/* {todos.map( todo =>
                     <button className={defaultBackground ? "todo-ellipse" : "todo-complete"} onClick={handleClick}></button>
                     <li key={generateKey(todo)}>
@@ -25,7 +24,6 @@ export default function TodoList({ todos }) {
                         {todo}
                     </li>    
                 )} */}
-            </ul>
             {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
         </div>
     )
