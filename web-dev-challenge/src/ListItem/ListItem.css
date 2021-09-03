@@ -46,4 +46,10 @@ button {
 
 .remove-todo {
     margin-left: auto;
+    background: url(../images//icon__close.png);
+    cursor: pointer;
+    padding: 0;
+    border: none;
 }
+
+
