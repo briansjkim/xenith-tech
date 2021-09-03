@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ListItem.css';
 
-// hovered is to make the close icon white
 class ListItem extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            defaultBackground: true,
-            hovered: false
+            defaultBackground: true
         };
 
         this.completeTodo = this.completeTodo.bind(this);
-        this.hoverRemove = this.hoverRemove.bind(this);
     }
 
     completeTodo() {
@@ -21,15 +18,7 @@ class ListItem extends Component {
             return {
               defaultBackground: !prevState.defaultBackground
             };
-        });
-    }
-
-    hoverRemove() {
-        this.setState(prevState => {
-            return {
-                hovered: !prevState.hovered
-            };
-        });
+          });
     }
 
     render() {
