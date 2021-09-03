@@ -26,13 +26,14 @@ class ListItem extends Component {
         return (
             <div className='List-item'>
                 <button
-                    className={!this.state.defaultBackground && 'button-check'}
+                    className={this.state.defaultBackground ? undefined : 'button-check'} 
                     onClick={this.handleClick}
                 ></button>
-                <li className={!this.state.defaultBackground && 'todo-complete'}>{this.props.todo}</li>
-                <div className="remove-todo">
+                <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>{this.props.todo}</li>
+                {/* <div className="remove-todo">
                     <button>X</button>
-                </div>
+                </div> */}
+                <button className="remove-todo"></button>
             </div>
         );
     }
