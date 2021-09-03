@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ListItem.css';
 
+// need to add a remove button too
 class ListItem extends Component {
     constructor(props) {
         super(props);
