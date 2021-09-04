@@ -7,10 +7,13 @@ import Footer from '../Footer/Footer';
 
 // possibly used Context API since TodoList doesn't really need removeTodo?
     // not deeply nested, so maybe not
-export default function TodoList({ todos, completeTodo, removeTodo }) {
+export default function TodoList({ todos, completeTodo, removeTodo, hoverRemove, hovered }) {
     const generateKey = (item) => {
         return `${item}_${new Date().getTime() }`;
     };
+
+    // const activeTodos = todos.filter(todo => todo.defaultBackground === true).length;
+
 
     return (
         <div className="Todolist">
@@ -21,10 +24,12 @@ export default function TodoList({ todos, completeTodo, removeTodo }) {
                         todo={todo}
                         completeTodo={completeTodo}
                         removeTodo={removeTodo}
+                        hoverRemove={hoverRemove}
+                        hovered={hovered}
                     />
                 )}
             </ul>
-            { todos.length !== 0 && <Footer todosLength={todos.length} />}
+            { todos.length !== 0 && <Footer todos={todos} hoverRemove={hoverRemove} hovered={hovered} />}
         </div>
     )
 }
@@ -32,5 +37,7 @@ export default function TodoList({ todos, completeTodo, removeTodo }) {
 TodoList.propTypes = {
     todos: PropTypes.array,
     completeTodo: PropTypes.func,
-    removeTodo: PropTypes.func
+    removeTodo: PropTypes.func,
+    hoverRemove: PropTypes.func,
+    hovered: PropTypes.bool
 };

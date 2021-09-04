@@ -2,17 +2,60 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Footer.css';
 
-// have to access todoList and see how many todoss' defaultBackground's are true
-export default function Footer({ todosLength }) {
+export default function Footer({ todos, hoverRemove, hovered }) {
+    const activeTodos = todos.filter(todo => todo.defaultBackground === true).length;
+    // const all = document.querySelector('.all');
+    // const active = document.querySelector('.active');
+    // const completed = document.querySelector('.completed');
+
+    // if (all && active && completed) {
+    //     [all, active, completed].forEach(item => {
+    //         item.addEventListener('mouseenter', () => {
+    //             console.log('got it')
+    //         })
+    //     })
+    // }
+
     return (
-        <div>
+        <div className="footer">
             <div className="remaining-items">
-                <p>{ todosLength } items left</p>
+                <p>{ activeTodos } items left</p>
+            </div>
+            <div className="mid">
+                <p 
+                    className={hovered ? 'all-hovered' : undefined}
+                    onMouseEnter={() => hoverRemove()}
+                    onMouseLeave={() => hoverRemove()}
+                >
+                        All
+                </p>
+                <p 
+                    className={hovered ? 'active-hovered' : undefined}
+                    // onMouseEnter={() => hoverRemove()}
+                    // onMouseLeave={() => hoverRemove()}
+                >
+                        Active
+                </p>
+                <p 
+                    className={hovered ? 'hovered' : undefined}
+                    // onMouseEnter={() => hoverRemove()}
+                    // onMouseLeave={() => hoverRemove()}
+                >
+                        Completed
+                </p>
+
+            </div>
+            <div className='clear-all'>
+                <p
+                    className={hovered ? 'hovered': undefined}
+                >Clear Completed</p>
             </div>
         </div>
     )
 }
 
 Footer.propTypes = {
-    todosLength: PropTypes.number
+    todos: PropTypes.array,
+    hoverRemove: PropTypes.func,
+    hovered: PropTypes.bool
 };

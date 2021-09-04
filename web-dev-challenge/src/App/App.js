@@ -12,12 +12,14 @@ class App extends Component {
         defaultBackground: true
       },
       todoList: [],
+      hovered: false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.completeTodo = this.completeTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
+    this.hoverRemove = this.hoverRemove.bind(this);
   }
 
   handleChange(e) {
@@ -90,6 +92,14 @@ class App extends Component {
     });
   }
 
+  hoverRemove() {
+    this.setState(prevState => {
+        return {
+            hovered: !prevState.hovered
+        };
+    });
+}
+
   render() {
     return (
       <div className="App">
@@ -111,6 +121,8 @@ class App extends Component {
             todos={this.state.todoList}
             completeTodo={this.completeTodo}
             removeTodo={this.removeTodo}
+            hoverRemove={this.hoverRemove}
+            hovered={this.state.hovered}
           />
         }
         </div>
