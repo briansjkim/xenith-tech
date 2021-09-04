@@ -14,6 +14,9 @@ export default function Footer({ todos }) {
                 <p>Active</p>
                 <p>Completed</p>
             </div>
+            <div>
+                <p>Clear Completed</p>
+            </div>
         </div>
     )
 }
