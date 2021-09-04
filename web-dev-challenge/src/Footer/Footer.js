@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Footer.css';
 
-// have to access todoList and see how many todoss' defaultBackground's are true
 export default function Footer({ todos }) {
+    const activeTodos = todos.filter(todo => todo.defaultBackground === true).length;
+
     return (
         <div className="footer">
             <div className="remaining-items">
-                <p>{ todos.length } items left</p>
+                <p>{ activeTodos } items left</p>
             </div>
             <div className="mid">
                 <p>All</p>
@@ -22,5 +23,5 @@ export default function Footer({ todos }) {
 }
 
 Footer.propTypes = {
-    todos: PropTypes.object
+    todos: PropTypes.array
 };
