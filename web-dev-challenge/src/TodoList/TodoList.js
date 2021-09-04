@@ -12,6 +12,9 @@ export default function TodoList({ todos, completeTodo, removeTodo }) {
         return `${item}_${new Date().getTime() }`;
     };
 
+    // const activeTodos = todos.filter(todo => todo.defaultBackground === true).length;
+
+
     return (
         <div className="Todolist">
             <ul className="todos">
