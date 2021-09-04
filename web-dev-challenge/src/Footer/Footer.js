@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Footer.css';
 
-export default function Footer({ todos }) {
+export default function Footer({ todos, hoverRemove, hovered }) {
     const activeTodos = todos.filter(todo => todo.defaultBackground === true).length;
+    // const all = document.querySelector('.all');
+    // const active = document.querySelector('.active');
+    // const completed = document.querySelector('.completed');
 
     return (
         <div className="footer">
@@ -11,9 +14,21 @@ export default function Footer({ todos }) {
                 <p>{ activeTodos } items left</p>
             </div>
             <div className="mid">
-                <p>All</p>
-                <p>Active</p>
-                <p>Completed</p>
+                <p className={hovered ? 'hovered' : undefined}
+                    onMouseEnter={() => hoverRemove()}>
+                        All
+                </p>
+                <p 
+                    className="active"
+                    onMouseEnter={() => hoverRemove()}>
+                        Active
+                </p>
+                <p 
+                    className="completed"
+                    onMouseEnter={() => hoverRemove()}>
+                        Completed
+                </p>
+
             </div>
             <div>
                 <p>Clear Completed</p>
@@ -23,5 +38,7 @@ export default function Footer({ todos }) {
 }
 
 Footer.propTypes = {
-    todos: PropTypes.array
+    todos: PropTypes.array,
+    hoverRemove: PropTypes.func,
+    hovered: PropTypes.bool
 };
