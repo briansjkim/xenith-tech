@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Footer.css';
 
+// have to access todoList and see how many todoss' defaultBackground's are true
 export default function Footer({ todosLength }) {
     return (
         <div>
