@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import './TodoList.css';
 import ListItem from '../ListItem/ListItem';
 import Footer from '../Footer/Footer';
-// import Button from '../Button/Button';
 
-// possibly used Context API since TodoList doesn't really need removeTodo?
-    // not deeply nested, so maybe not
 export default function TodoList({ todos, completeTodo, removeTodo, hoverRemove, hovered }) {
     const generateKey = (item) => {
         return `${item}_${new Date().getTime() }`;
     };
 
+    // move logic from Footer component up here since function generateKey() is already here?
     // const activeTodos = todos.filter(todo => todo.defaultBackground === true).length;
 
 

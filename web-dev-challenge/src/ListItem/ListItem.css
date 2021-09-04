@@ -2,10 +2,6 @@
     display: flex;
     padding: 24px;
     left: 20px;
-    /* flex-direction: row;
-    align-items: center; */
-
-
     font-family: Verdana;
     font-style: normal;
     font-weight: normal;
@@ -46,7 +42,6 @@ button {
 
 .remove-todo {
     margin-left: auto;
-    /* background: url(../images/icon__close.png); */
     cursor: pointer;
     padding: 0;
     border: none;
@@ -56,7 +51,6 @@ button {
 
 .hover-remove {
     margin-left: auto;
-    /* background: url(../images/icon__close.png) ; */
     cursor: pointer;
     padding: 0;
     border: none;
