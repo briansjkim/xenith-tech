@@ -6,7 +6,7 @@ import ListItem from '../ListItem/ListItem';
 
 // possibly used Context API since TodoList doesn't really need removeTodo?
     // not deeply nested, so maybe not
-export default function TodoList({ todos, removeTodo }) {
+export default function TodoList({ todos, completeTodo, removeTodo }) {
     const generateKey = (item) => {
         return `${item}_${new Date().getTime() }`;
     };
@@ -16,8 +16,9 @@ export default function TodoList({ todos, removeTodo }) {
             <ul className="todos">
                 {todos.map( todo =>
                     <ListItem 
-                        key={generateKey(todo)} 
-                        todo={todo} 
+                        key={generateKey(todo.input)} 
+                        todo={todo}
+                        completeTodo={completeTodo}
                         removeTodo={removeTodo}
                     />
                 )}
@@ -29,5 +30,6 @@ export default function TodoList({ todos, removeTodo }) {
 
 TodoList.propTypes = {
     todos: PropTypes.array,
+    completeTodo: PropTypes.func,
     removeTodo: PropTypes.func
 };
