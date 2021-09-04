@@ -7,21 +7,10 @@ class ListItem extends Component {
         super(props);
 
         this.state = {
-            defaultBackground: true,
             hovered: false
         };
-
-        // this.completeTodo = this.completeTodo.bind(this);
         this.hoverRemove = this.hoverRemove.bind(this);
     }
-
-    // completeTodo() {
-    //     this.setState(prevState => {
-    //         return {
-    //           defaultBackground: !prevState.defaultBackground
-    //         };
-    //     });
-    // }
     
     hoverRemove() {
         this.setState(prevState => {
