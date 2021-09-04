@@ -8,24 +8,39 @@ export default function Footer({ todos, hoverRemove, hovered }) {
     // const active = document.querySelector('.active');
     // const completed = document.querySelector('.completed');
 
+    // if (all && active && completed) {
+    //     [all, active, completed].forEach(item => {
+    //         item.addEventListener('mouseenter', () => {
+    //             console.log('got it')
+    //         })
+    //     })
+    // }
+
     return (
         <div className="footer">
             <div className="remaining-items">
                 <p>{ activeTodos } items left</p>
             </div>
             <div className="mid">
-                <p className={hovered ? 'hovered' : undefined}
-                    onMouseEnter={() => hoverRemove()}>
+                <p 
+                    className={hovered ? 'hovered' : undefined}
+                    onMouseEnter={() => hoverRemove()}
+                    onMouseLeave={() => hoverRemove()}
+                >
                         All
                 </p>
                 <p 
-                    className="active"
-                    onMouseEnter={() => hoverRemove()}>
+                    className={hovered ? 'hovered' : undefined}
+                    onMouseEnter={() => hoverRemove()}
+                    onMouseLeave={() => hoverRemove()}
+                >
                         Active
                 </p>
                 <p 
-                    className="completed"
-                    onMouseEnter={() => hoverRemove()}>
+                    className={hovered ? 'hovered' : undefined}
+                    onMouseEnter={() => hoverRemove()}
+                    onMouseLeave={() => hoverRemove()}
+                >
                         Completed
                 </p>
 
