@@ -25,7 +25,6 @@ export default function TodoList({ todos, completeTodo, removeTodo }) {
                 )}
             </ul>
             { todos.length !== 0 && <Footer todosLength={todos.length} />}
-            {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
         </div>
     )
 }
