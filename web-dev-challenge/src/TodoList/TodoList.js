@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TodoList.css';
 import ListItem from '../ListItem/ListItem';
+import Footer from '../Footer/Footer';
 // import Button from '../Button/Button';
 
 // possibly used Context API since TodoList doesn't really need removeTodo?
@@ -22,6 +23,7 @@ export default function TodoList({ todos, removeTodo }) {
                     />
                 )}
             </ul>
+            { todos.length !== 0 && <Footer todosLength={todos.length} />}
             {/* {todos.length !== 0 && <p>{todos.length} items left</p>} */}
         </div>
     )
