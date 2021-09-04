@@ -23,30 +23,32 @@ export default function Footer({ todos, hoverRemove, hovered }) {
             </div>
             <div className="mid">
                 <p 
-                    className={hovered ? 'hovered' : undefined}
+                    className={hovered ? 'all-hovered' : undefined}
                     onMouseEnter={() => hoverRemove()}
                     onMouseLeave={() => hoverRemove()}
                 >
                         All
                 </p>
                 <p 
-                    className={hovered ? 'hovered' : undefined}
-                    onMouseEnter={() => hoverRemove()}
-                    onMouseLeave={() => hoverRemove()}
+                    className={hovered ? 'active-hovered' : undefined}
+                    // onMouseEnter={() => hoverRemove()}
+                    // onMouseLeave={() => hoverRemove()}
                 >
                         Active
                 </p>
                 <p 
                     className={hovered ? 'hovered' : undefined}
-                    onMouseEnter={() => hoverRemove()}
-                    onMouseLeave={() => hoverRemove()}
+                    // onMouseEnter={() => hoverRemove()}
+                    // onMouseLeave={() => hoverRemove()}
                 >
                         Completed
                 </p>
 
             </div>
-            <div>
-                <p>Clear Completed</p>
+            <div className='clear-all'>
+                <p
+                    className={hovered ? 'hovered': undefined}
+                >Clear Completed</p>
             </div>
         </div>
     )
