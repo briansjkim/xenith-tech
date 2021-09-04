@@ -1,0 +1,34 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer p {
+    margin: 26px 16px;
+}
+
+.remaining-items {
+    position: static;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+}
+
+.remaining-items p {
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.mid {
+    display: flex;
+}
+
+.mid p {
+    margin-left: 12px;
+    margin-right: 12px;
+}
