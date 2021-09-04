@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ListItem.css';
 
+// change to functional component since state isn't needed here anymore
 class ListItem extends Component {
     constructor(props) {
         super(props);
@@ -9,16 +10,16 @@ class ListItem extends Component {
         this.state = {
             hovered: false
         };
-        this.hoverRemove = this.hoverRemove.bind(this);
+        // this.hoverRemove = this.hoverRemove.bind(this);
     }
     
-    hoverRemove() {
-        this.setState(prevState => {
-            return {
-                hovered: !prevState.hovered
-            };
-        });
-    }
+    // hoverRemove() {
+    //     this.setState(prevState => {
+    //         return {
+    //             hovered: !prevState.hovered
+    //         };
+    //     });
+    // }
 
     render() {
         return (
@@ -32,8 +33,8 @@ class ListItem extends Component {
                 </li>
                 <button 
                     className={this.state.hovered ? 'hover-remove' : 'remove-todo' }
-                    onMouseEnter={() => this.hoverRemove()} 
-                    onMouseLeave={() => this.hoverRemove()}
+                    onMouseEnter={() => this.props.hoverRemove()} 
+                    onMouseLeave={() => this.props.hoverRemove()}
                     onClick={() => this.props.removeTodo(this.props.todo)}
                 >X
                 </button>
@@ -45,7 +46,8 @@ class ListItem extends Component {
 ListItem.propTypes = {
     todo: PropTypes.object,
     completeTodo: PropTypes.func,
-    removeTodo: PropTypes.func
+    removeTodo: PropTypes.func,
+    hoverRemove: PropTypes.func
 };
 
 export default ListItem;
