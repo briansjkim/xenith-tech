@@ -11,17 +11,17 @@ class ListItem extends Component {
             hovered: false
         };
 
-        this.completeTodo = this.completeTodo.bind(this);
+        // this.completeTodo = this.completeTodo.bind(this);
         this.hoverRemove = this.hoverRemove.bind(this);
     }
 
-    completeTodo() {
-        this.setState(prevState => {
-            return {
-              defaultBackground: !prevState.defaultBackground
-            };
-        });
-    }
+    // completeTodo() {
+    //     this.setState(prevState => {
+    //         return {
+    //           defaultBackground: !prevState.defaultBackground
+    //         };
+    //     });
+    // }
     
     hoverRemove() {
         this.setState(prevState => {
@@ -35,11 +35,11 @@ class ListItem extends Component {
         return (
             <div className='List-item'>
                 <button
-                    className={this.state.defaultBackground ? undefined : 'button-check'} 
-                    onClick={this.completeTodo}
+                    className={this.props.todo.defaultBackground ? undefined : 'button-check'}
+                    onClick={() => this.props.completeTodo(this.props.todo)}
                 ></button>
-                <li className={this.state.defaultBackground ? undefined : 'todo-complete'}>
-                    {this.props.todo}
+                <li className={this.props.todo.defaultBackground ? undefined : 'todo-complete'}>
+                    {this.props.todo.input}
                 </li>
                 <button 
                     className={this.state.hovered ? 'hover-remove' : 'remove-todo' }
@@ -54,7 +54,8 @@ class ListItem extends Component {
 }
 
 ListItem.propTypes = {
-    todo: PropTypes.string,
+    todo: PropTypes.object,
+    completeTodo: PropTypes.func,
     removeTodo: PropTypes.func
 };
 
