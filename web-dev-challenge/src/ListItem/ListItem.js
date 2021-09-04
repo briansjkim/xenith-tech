@@ -12,6 +12,7 @@ class ListItem extends Component {
         };
 
         this.completeTodo = this.completeTodo.bind(this);
+        this.hoverRemove = this.hoverRemove.bind(this);
     }
 
     completeTodo() {
@@ -19,9 +20,9 @@ class ListItem extends Component {
             return {
               defaultBackground: !prevState.defaultBackground
             };
-          });
+        });
     }
-
+    
     hoverRemove() {
         this.setState(prevState => {
             return {
