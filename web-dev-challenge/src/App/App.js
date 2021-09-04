@@ -7,19 +7,28 @@ class App extends Component {
     super();
 
     this.state = {
-      todo: '',
+      todo: {
+        input: '',
+        defaultBackground: true
+      },
       todoList: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.completeTodo = this.completeTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
   }
 
   handleChange(e) {
     let newTodo = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1).toLowerCase();
-    this.setState({
-      todo: newTodo
+    this.setState(prevState => {
+      return {
+        todo: {
+          ...prevState.todo,
+          input: newTodo
+        }
+      };
     });
   }
 
@@ -27,11 +36,18 @@ class App extends Component {
     if (e.key === 'Enter') {
       e.preventDefault();
       
-      let { todo, todoList } = this.state;
-      if (todoList.includes(todo)) {
+      let { todo } = this.state;
+      let todoList = [...this.state.todoList];
+
+      if (todoList.includes(todo.input)) {
         alert('This is already in your list');
-        this.setState({
-          todo: ''
+        this.setState(prevState => {
+          return {
+            todo: {
+              ...prevState.todo,
+              input: ''
+            }
+          };
         });
         return;
       }
@@ -39,10 +55,29 @@ class App extends Component {
       this.setState( prevState => {
         return {
           todoList: [...prevState.todoList, todo],
-          todo: ''
+          todo: {
+            ...prevState.todo,
+            input: ''
+          }
         };
       });
     }
+  }
+
+  completeTodo(todoItem) {
+    let todoIdx = this.state.todoList.indexOf(todoItem);
+    this.setState(prevState => {
+      return {
+        todoList: [
+          ...prevState.todoList.slice(0, todoIdx),
+          {
+            ...prevState.todoList[todoIdx],
+            defaultBackground: !prevState.todoList[todoIdx].defaultBackground
+          },
+          ...prevState.todoList.slice(todoIdx + 1)
+        ]
+      }
+    })
   }
 
   removeTodo(todoItem) {
@@ -63,7 +98,7 @@ class App extends Component {
           <input
             onChange={this.handleChange}
             onKeyPress={this.handleSubmit}
-            value={this.state.todo}
+            value={this.state.todo.input}
             placeholder="Create new item..."
           />
         </div>
@@ -73,7 +108,8 @@ class App extends Component {
             <p>You have no items in your todo list. Create an item to begin tracking your list.</p>
           </div> :
           <TodoList 
-            todos={this.state.todoList} 
+            todos={this.state.todoList}
+            completeTodo={this.completeTodo}
             removeTodo={this.removeTodo}
           />
         }
